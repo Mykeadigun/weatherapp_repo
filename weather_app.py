@@ -2,7 +2,7 @@ import requests
 import datetime
 
 today = datetime.datetime.today()
-print(f"{today:%B %d, %Y}")
+print(f"{today:%d %B, %Y}")
 
 
 def get_weather(city, api_key):
