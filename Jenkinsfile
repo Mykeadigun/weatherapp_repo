@@ -7,26 +7,15 @@ pipeline {
       }
     }
 
-    stage('List Directory') {
+    stage('Check Workspace') {
       steps {
-        sh 'ls -la'
+        sh 'ls -l'
       }
     }
 
-    stage('Check Workspace') {
-      parallel {
-        stage('Check Workspace') {
-          steps {
-            sh 'ls -l'
-          }
-        }
-
-        stage('Build') {
-          steps {
-            sh 'docker build -t Dockerfile .'
-          }
-        }
-
+    stage('Build') {
+      steps {
+        sh 'docker build -f Dockerfile .'
       }
     }
 
