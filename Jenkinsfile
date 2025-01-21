@@ -17,11 +17,11 @@ pipeline {
                 sh 'docker --version || echo "Docker is not installed or not in PATH"'
             }
 
-    stage('Build') {
-      steps {
-        sh 'docker build -f Dockerfile .'
+      stage('Build') {
+        steps {
+          sh 'docker build -f Dockerfile .'
+          }
+        }
       }
     }
-
   }
-}
