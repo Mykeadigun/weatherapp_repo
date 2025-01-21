@@ -14,8 +14,19 @@ pipeline {
     }
 
     stage('Check Workspace') {
-      steps {
-        sh 'ls -l'
+      parallel {
+        stage('Check Workspace') {
+          steps {
+            sh 'ls -l'
+          }
+        }
+
+        stage('Build') {
+          steps {
+            sh 'docker build -t Dockerfile .'
+          }
+        }
+
       }
     }
 
