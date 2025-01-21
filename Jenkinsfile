@@ -5,8 +5,7 @@ pipeline {
       steps {
         git branch: 'main', url: 'https://github.com/Mykeadigun/weatherapp_repo'
       }
-    }
-
+    } 
     stage('Check Workspace') {
       steps {
         sh 'ls -l'
