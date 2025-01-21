@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkcode') {
       steps {
-        git(url: 'https://github.com/Mykeadigun/weatherapp_repo', branch: 'main')
+        git branch: 'main', url: 'https://github.com/Mykeadigun/weatherapp_repo'
       }
     }
 
@@ -12,6 +12,11 @@ pipeline {
         sh 'ls -l'
       }
     }
+    stages {
+        stage('Check Docker Installation') {
+            steps {
+                sh 'docker --version || echo "Docker is not installed or not in PATH"'
+            }
 
     stage('Build') {
       steps {
