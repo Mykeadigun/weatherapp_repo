@@ -17,12 +17,5 @@ pipeline {
         sh 'ls -l'
     }
 }
-
-    stage('Build') {
-      steps {
-        sh 'docker build -f /Dockerfile .'
-      }
-    }
-
   }
 }
