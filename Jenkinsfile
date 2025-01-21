@@ -12,10 +12,12 @@ pipeline {
         sh 'ls -la'
       }
     }
+
     stage('Check Workspace') {
-    steps {
+      steps {
         sh 'ls -l'
+      }
     }
-}
+
   }
 }
