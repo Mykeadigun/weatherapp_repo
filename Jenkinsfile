@@ -12,6 +12,11 @@ pipeline {
         sh 'ls -la'
       }
     }
+    stage('Check Workspace') {
+    steps {
+        sh 'ls -l'
+    }
+}
 
     stage('Build') {
       steps {
