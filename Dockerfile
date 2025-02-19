@@ -5,8 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY weather_app.py /app
-COPY Python /app
+COPY . .
 
 # Install any Python dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
